@@ -975,7 +975,8 @@ span {
         align-items: center;
     }
     .frontpage_text {
-        max-width: 10em;
+        max-width: 15em;
+        font-weight: bold;
         /* justify-content: center; */
     }
     .frontpage_img {
