@@ -85,7 +85,7 @@ h4, .menu_item {
 h5 {
     font-size: 14px;
     font-weight: lighter;
-    margin: 0;
+    margin: 0; 
     padding: 10px;
 }
 h6, .cta_btn, .see_more {
@@ -781,33 +781,12 @@ span {
 }
 
 @media screen and (max-width: 1000px) {
-    /* .hamburger {
-        width: 15em;
-        /* padding: 0.5em; */
-        /* display: flex;
-        justify-content: flex-end;
+    .post_title {
+        font-size: 18px;
     }
-    label {
-        display: block;
-        cursor: pointer;
+    .main_title, .feedback {
+        font-size: 18px;
     }
-    .hamburgernav {
-        background-color: var(--lighterpurple);
-        color: var(--warmpurple);
-        right: 0%;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        position: absolute;
-        top: 120px;
-        height: 40em;
-        width: auto;
-        z-index: 10;
-    }
-    #hamburgermenu:checked ~ section {
-        display: flex;
-    } */
     h1 {
         font-size: 14px;
     }
@@ -824,13 +803,13 @@ span {
     .nav_item, .meme_category_title {
         font-size: 14px;
     }
-    .logo {
-        max-width: 15em;
-    }
     .cta_btn {
         font-size: 12px;
         padding: 1em 3em;
         margin: 2em;
+    }
+    .logo {
+        max-width: 15em;
     }
     .frontpage_img {
         max-width: 25em;
@@ -921,14 +900,14 @@ span {
     .searchbox {
         display: none;
     }
-    h1 {
-        /* font-size: 12px; */
+    /* h1 {
+        font-size: 12px;
         font-size: 14px;
-    }
-    h2 {
-        /* font-size: 12px; */
+    } */
+    /* h2 {
+        font-size: 12px;
         font-size: 14px;
-    }
+    } */
     .post_title {
         /* font-size: 14px; */
         font-size: 16px;
@@ -943,9 +922,9 @@ span {
     }
     h5 {
         /* font-size: 10px; */
-        font-size: 12px;
+        /* font-size: 12px; */
         font-weight: bolder;
-        padding: 0.5em;
+        /* padding: 0.5em; */
     }
     h6, .cta_btn, .see_more {
         /* font-size: 12px; */
