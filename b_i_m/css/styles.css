@@ -769,9 +769,9 @@ span {
     .latest_posts_container, .related_posts_container {
         max-width: 55em;
     }
-    .card_image {
+    /* .card_image {
         max-width: 10em;
-    }
+    } */
     .modal_img {
         width: 100%;
     }
