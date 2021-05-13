@@ -1,6 +1,7 @@
 const blogIntro = document.querySelector(".blog_intro");
 const detailsContent = document.querySelector(".details_content")
 
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -107,8 +108,20 @@ function scrollRight(){
 arrowLeft.addEventListener("click", scrollLeft);
 arrowRight.addEventListener("click", scrollRight);
 
+const comment = document.querySelector("#comment");
+const button = document.querySelector(".cta_btn");
+function validateComment() {
+    // event.preventDefault();
+    if (comment.value.length >= 5) {
+        button.disabled = false;
+    }
+    else {
+        button.disabled = true;
+    }
+}
 
-
+comment.addEventListener("keyup", validateComment);
+// validateComment();
 
 
 

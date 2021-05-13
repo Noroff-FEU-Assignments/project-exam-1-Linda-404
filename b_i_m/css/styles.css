@@ -708,6 +708,7 @@ footer {
     margin-top: 1em;
     align-self: center;
 }
+
 /* loader style */
 .loading {
     background: #FFF;
@@ -772,15 +773,13 @@ span {
     .latest_posts_container, .related_posts_container {
         max-width: 55em;
     }
-    /* .card_image {
-        max-width: 10em;
-    } */
     .modal_img {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 1000px) {
+    /* index/general style */
     .post_title {
         font-size: 18px;
     }
@@ -844,14 +843,17 @@ span {
     .main_title {
         padding-bottom: 10px;
     }
+
     /* about page style */
     .detail_image {
         max-width: 30em;
     }
+
     /* blogdetails style */
     .comment_field {
         width: 30em;
     }
+
     /* memepage style */
     .meme_icon {
         max-width: 4em;
@@ -869,6 +871,7 @@ span {
 }
 
 @media screen and (max-width: 700px) {
+    /* index/general style */
     .hamburger {
         width: 15em;
         /* padding: 0.5em; */
@@ -1064,6 +1067,12 @@ span {
     .archive {
         display: none;
     }
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     /* about page style */
     .introduction {
         max-width: 20em;
@@ -1071,6 +1080,7 @@ span {
     .detail_image {
         max-width: 20em;
     }
+
     /* memepage style */
     .meme_icon {
         max-width: 3em;
@@ -1081,12 +1091,6 @@ span {
     }
     .memes_container::after {
         margin-bottom: 50px;
-    }
-
-    .footer_content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     /* blogdetails style */
