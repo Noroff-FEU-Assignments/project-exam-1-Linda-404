@@ -6,6 +6,7 @@ const personalMemes = document.querySelector(".personal_memes");
 
 
 
+
 const url = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 async function fetchMemes() {
@@ -51,7 +52,7 @@ async function fetchAllMemes() {
         }
 
         addModal();
-
+        
     }
     catch (error) {
         console.log(error);
@@ -59,6 +60,22 @@ async function fetchAllMemes() {
 }
 
 allMemes.addEventListener("click", fetchAllMemes);
+
+// function currentCategory() {
+//     let memeIcons = document.querySelectorAll(".meme_icon");
+//     for (let i = 0; i < memeIcons.length; i++) {
+//         let memeIcon = memeIcons[i];
+//         memeIcon.addEventListener("click", function() {
+//             memeIcon.style = "box-shadow: 0 4px 8px 0 var(--lightpurple), 0 6px 6px 0 var(--lightpurple);";
+//         });
+//     }
+        
+// }
+// currentCategory();
+
+
+// allMemes.innerHTML = `<img src="images/tv-404_square.jpg" class="meme_icon meme_current_category">
+//                       <a class="meme_category_title">all</a>`
 
 async function fetchParentingMemes() {
     

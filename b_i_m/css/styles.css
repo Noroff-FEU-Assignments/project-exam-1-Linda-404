@@ -644,6 +644,9 @@ main {
     max-width: 5em;
     border-radius: 50%;
 }
+/* .meme_current_category {
+    box-shadow: 0 4px 8px 0 var(--lightpurple), 0 6px 6px 0 var(--lightpurple);
+} */
 .meme_category_container {
     display: flex;
 }
