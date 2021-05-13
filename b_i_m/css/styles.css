@@ -976,11 +976,11 @@ span {
     }
     .frontpage_text {
         max-width: 15em;
-        font-weight: bold;
+        font-weight: bolder;
         /* justify-content: center; */
     }
     .frontpage_img {
-        max-width: 17em;
+        max-width: 20em;
     }
     .latest_posts_container, .related_posts_container {
         max-width: 20em;
@@ -1132,9 +1132,7 @@ span {
         height: 8em;
     }
     /* blogpage style */
-    /* .mobile_img {
-        width: 20em;
-    } */
+    
     /* contact style */
     .contact_form {
         width: 20em;
