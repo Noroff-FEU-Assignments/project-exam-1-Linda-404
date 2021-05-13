@@ -1,5 +1,6 @@
 const blogIntro = document.querySelector(".blog_intro");
-const detailsContent = document.querySelector(".details_content")
+const detailsContent = document.querySelector(".details_content");
+const title = document.querySelector("title");
 
 
 const queryString = document.location.search;
@@ -26,6 +27,9 @@ async function fetchBlogDetails() {
         let category = results.categories[0];
         console.log("cat: " + category)
         fetchPostByCategory(category);
+
+
+        title.innerHTML = `${results.title.rendered} | badinfluencemom`
         
         blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image">
                                 <div class="modal">
@@ -121,7 +125,6 @@ function validateComment() {
 }
 
 comment.addEventListener("keyup", validateComment);
-// validateComment();
 
 
 

@@ -60,18 +60,30 @@ async function fetchAllMemes() {
 }
 
 allMemes.addEventListener("click", fetchAllMemes);
+const memeIcons = document.querySelectorAll(".meme_icon");
+let isClicked = new Array(memeIcons.length).fill(false); 
 
-// function currentCategory() {
-//     let memeIcons = document.querySelectorAll(".meme_icon");
-//     for (let i = 0; i < memeIcons.length; i++) {
-//         let memeIcon = memeIcons[i];
-//         memeIcon.addEventListener("click", function() {
-//             memeIcon.style = "box-shadow: 0 4px 8px 0 var(--lightpurple), 0 6px 6px 0 var(--lightpurple);";
-//         });
-//     }
+function currentCategory() {
+    let memeIcons = document.querySelectorAll(".meme_icon");
+    for (let i = 0; i < memeIcons.length; i++) {
+        let memeIcon = memeIcons[i];
+        memeIcon.addEventListener("click", function() {
+            isClicked.fill(false);
+            isClicked[i] = true;   
+            for (let j = 0; j < memeIcons.length; j++){
+                if (isClicked[j]) {
+                    memeIcons[j].style = "box-shadow: 0 4px 8px 0 var(--lightpurple), 0 6px 6px 0 var(--lightpurple);";
+                }
+                else{
+                    memeIcons[j].style = "";
+                }
+            }
+            
+        });
+    }
         
-// }
-// currentCategory();
+}
+currentCategory();
 
 
 // allMemes.innerHTML = `<img src="images/tv-404_square.jpg" class="meme_icon meme_current_category">

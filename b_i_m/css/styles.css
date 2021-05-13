@@ -257,6 +257,7 @@ main {
 }
 .scrolling_wrapper {
     display: flex;
+    scroll-behavior: smooth;
     overflow-x: scroll;
     overflow-x: hidden;
 }

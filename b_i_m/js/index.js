@@ -59,11 +59,11 @@ function scroll(amount) {
 }
 
 function scrollLeft(){
-    scroll(-100);
+    scroll(-250);
 }
 
 function scrollRight(){
-    scroll(100);
+    scroll(250);
 }
 
 arrowLeft.addEventListener("click", scrollLeft);
