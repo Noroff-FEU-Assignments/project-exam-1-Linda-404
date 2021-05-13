@@ -1144,5 +1144,8 @@ span {
         width: 20em;
         height: 20em;
     }
+    .contact_form::after {
+        margin-bottom: 50px;
+    }
 
 }
