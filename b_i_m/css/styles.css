@@ -1130,13 +1130,13 @@ span {
     
     /* contact style */
     .contact_form {
-        width: 20em;
+        width:25em;
     }
     .form_input {
-        width: 20em;
+        width: 25em;
     }
     .form_message {
-        width: 20em;
+        width: 25em;
         height: 20em;
     }
     .contact_form::after {
