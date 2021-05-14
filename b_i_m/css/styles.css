@@ -777,7 +777,10 @@ span {
         transform: translateX(-5px);
     }
 }
-
+.error {
+    background-color: var(--warmpurple);
+    padding: 10px;
+}
 
 
 
