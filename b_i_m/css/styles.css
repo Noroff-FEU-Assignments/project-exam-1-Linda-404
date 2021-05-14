@@ -108,6 +108,7 @@ p {
     background-color: var(--warmpurple);
     color: var(--bananayellow);
     border: none;
+    border-radius: none;
     align-self: center;
     padding: 1em 5em;
     margin: 2em;
@@ -118,11 +119,11 @@ p {
 }
 .cta_btn:disabled {
     background-color: grey;
-    color: var(--bananayellow);
+    /* color: var(--bananayellow);
     border: none;
     align-self: center;
     padding: 1em 5em;
-    margin: 2em;
+    margin: 2em; */
 }
 
 /* header style */
