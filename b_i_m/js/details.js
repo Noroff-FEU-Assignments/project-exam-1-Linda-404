@@ -56,6 +56,8 @@ async function fetchBlogDetails() {
     }
     catch (error) {
         console.log(error);
+        blogIntro.innerHTML = displayError("An error occured when calling API");
+        detailsContent.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -93,6 +95,8 @@ async function fetchPostByCategory(category) {
 // // parenting = 2
 // // lifestyle = 3
 // // personal = 4
+
+// add clickfunction to arrows
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 
@@ -102,20 +106,20 @@ function scroll(amount) {
 }
 
 function scrollLeft(){
-    scroll(-100);
+    scroll(-250);
 }
 
 function scrollRight(){
-    scroll(100);
+    scroll(250);
 }
 
 arrowLeft.addEventListener("click", scrollLeft);
 arrowRight.addEventListener("click", scrollRight);
 
+// add comment
 const comment = document.querySelector("#comment");
 const button = document.querySelector(".cta_btn");
 function validateComment() {
-    // event.preventDefault();
     if (comment.value.length >= 5) {
         button.disabled = false;
     }

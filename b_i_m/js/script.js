@@ -26,6 +26,7 @@ async function fetchPosts() {
     }
     catch (error) {
         console.log(error);
+        postContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -53,6 +54,7 @@ async function fetchAllPosts() {
     }
     catch (error) {
         console.log(error);
+        postContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 

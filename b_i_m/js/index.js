@@ -37,11 +37,11 @@ async function fetchPosts() {
                                             <a href="blogdetails.html?id=${results[i].id}" class="see_more">read more</a>
                                         </div>`
         }
-        // const postsText = document.querySelector(".homepage_text");
-        // $clamp(postsText, {clamp: 5});
     }
     catch (error) {
         console.log(error);
+        latestPosts.innerHTML = displayError("An error occured when calling API");
+        postsContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -93,6 +93,7 @@ async function fetchMemes() {
     }
     catch (error) {
         console.log(error);
+        memesContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 

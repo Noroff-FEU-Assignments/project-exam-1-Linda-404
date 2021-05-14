@@ -30,6 +30,7 @@ async function fetchMemes() {
     }
     catch (error) {
         console.log(error);
+        memeContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -56,6 +57,7 @@ async function fetchAllMemes() {
     }
     catch (error) {
         console.log(error);
+        memeContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -86,9 +88,6 @@ function currentCategory() {
 currentCategory();
 
 
-// allMemes.innerHTML = `<img src="images/tv-404_square.jpg" class="meme_icon meme_current_category">
-//                       <a class="meme_category_title">all</a>`
-
 async function fetchParentingMemes() {
     
     try {
@@ -112,6 +111,7 @@ async function fetchParentingMemes() {
     }
     catch (error) {
         console.log(error);
+        memeContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -159,6 +159,7 @@ async function fetchProgrammingMemes() {
     }
     catch (error) {
         console.log(error);
+        memeContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 
@@ -185,6 +186,7 @@ async function fetchPersonalMemes() {
     }
     catch (error) {
         console.log(error);
+        memeContainer.innerHTML = displayError("An error occured when calling API");
     }
 }
 

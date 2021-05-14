@@ -722,6 +722,9 @@ footer {
 }
 
 /* loader style */
+.loading_container {
+    padding: 5em;
+}
 .loading {
     background: #FFF;
     position: absolute;
