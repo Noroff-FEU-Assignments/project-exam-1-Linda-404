@@ -9,9 +9,9 @@ const personalMemes = document.querySelector(".personal_memes");
 
 const url = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
-async function fetchMemes() {
+async function fetchMemes(memeUrl) {
     try {
-        const response = await fetch(url);
+        const response = await fetch(memeUrl);
         const results = await response.json();
 
         console.log(results);
@@ -34,34 +34,39 @@ async function fetchMemes() {
     }
 }
 
-fetchMemes();
+fetchMemes(url);
 
-async function fetchAllMemes() {
-    try {
-        const response = await fetch(url + "?per_page=100");
-        const results = await response.json();
+// fetch all memes
 
-        console.log("num results: " + results.length);
-        memeContainer.innerHTML = "";
+// async function fetchAllMemes() {
+//     try {
+//         const response = await fetch(url + "?per_page=100");
+//         const results = await response.json();
 
-        for (let i = 0; i < results.length; i++) {
+//         console.log("num results: " + results.length);
+//         memeContainer.innerHTML = "";
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`
-        }
+//         for (let i = 0; i < results.length; i++) {
 
-        addModal();
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
+
+//         addModal();
         
-    }
-    catch (error) {
-        console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
-allMemes.addEventListener("click", fetchAllMemes);
+allMemes.addEventListener("click", function() {
+    fetchMemes(url + "?per_page=100");
+});
+
 const memeIcons = document.querySelectorAll(".meme_icon");
 let isClicked = new Array(memeIcons.length).fill(false); 
 
@@ -118,14 +123,11 @@ async function fetchParentingMemes() {
 function addModal(){
     let images = document.querySelectorAll(".meme");
     for (let i=0; i < images.length; i++){
-        console.log(images[i]);
         let image = images[i];
         let modal = document.querySelector(`.modal`);
-        console.log(modal);
+        
         let modalImg = document.querySelector(`.modal_img`);
-        console.log(modalImg);
         image.addEventListener("click", function() {
-            console.log("hei fra " + i);
             modal.style.display = "block";
            modalImg.src = this.src;
         });
