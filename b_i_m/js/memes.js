@@ -37,6 +37,21 @@ async function fetchMemes(memeUrl) {
 fetchMemes(url);
 
 // fetch all memes
+allMemes.addEventListener("click", function() {
+    fetchMemes(url + "?per_page=100");
+});
+// fetch parenting memes
+parentingMemes.addEventListener("click", function() {
+    fetchMemes(url + "?per_page=100" + "&tag=20");
+});
+// fetch programming memes
+programmingMemes.addEventListener("click", function() {
+    fetchMemes(url + "?per_page=100" + "&tag=21");
+});
+// fetch personal memes
+personalMemes.addEventListener("click", function() {
+    fetchMemes(url + "?per_page=100" + "&tag=22");
+});
 
 // async function fetchAllMemes() {
 //     try {
@@ -63,10 +78,8 @@ fetchMemes(url);
 //     }
 // }
 
-allMemes.addEventListener("click", function() {
-    fetchMemes(url + "?per_page=100");
-});
 
+// meme category indicator
 const memeIcons = document.querySelectorAll(".meme_icon");
 let isClicked = new Array(memeIcons.length).fill(false); 
 
@@ -93,33 +106,34 @@ function currentCategory() {
 currentCategory();
 
 
-async function fetchParentingMemes() {
+// async function fetchParentingMemes() {
     
-    try {
-        const response = await fetch(url + "?per_page=100" + "&tag=20");
-        const results = await response.json();
+//     try {
+//         const response = await fetch(url + "?per_page=100" + "&tag=20");
+//         const results = await response.json();
         
-        console.log(results);
-        memeContainer.innerHTML = "";
+//         console.log(results);
+//         memeContainer.innerHTML = "";
         
-        for (let i = 0; i < results.length; i++) {
+//         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`    
-        }
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`    
+//         }
         
      
-        addModal();
+//         addModal();
    
-    }
-    catch (error) {
-        console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
+// Add modal
 function addModal(){
     let images = document.querySelectorAll(".meme");
     for (let i=0; i < images.length; i++){
@@ -137,62 +151,62 @@ function addModal(){
     }
 }
 
-parentingMemes.addEventListener("click", fetchParentingMemes);
+// parentingMemes.addEventListener("click", fetchParentingMemes);
 
-async function fetchProgrammingMemes() {
-    try {
-        const response = await fetch(url + "?per_page=100" + "&tag=21");
-        const results = await response.json();
+// async function fetchProgrammingMemes() {
+//     try {
+//         const response = await fetch(url + "?per_page=100" + "&tag=21");
+//         const results = await response.json();
 
-        console.log(results);
-        memeContainer.innerHTML = "";
+//         console.log(results);
+//         memeContainer.innerHTML = "";
 
-        for (let i = 0; i < results.length; i++) {
+//         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
 
-        }
+//         }
 
-        addModal();
+//         addModal();
 
-    }
-    catch (error) {
-        console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
-programmingMemes.addEventListener("click", fetchProgrammingMemes);
+// programmingMemes.addEventListener("click", fetchProgrammingMemes);
 
-async function fetchPersonalMemes() {
-    try {
-        const response = await fetch(url + "?per_page=100" + "&tag=22");
-        const results = await response.json();
+// async function fetchPersonalMemes() {
+//     try {
+//         const response = await fetch(url + "?per_page=100" + "&tag=22");
+//         const results = await response.json();
 
-        console.log(results);
-        memeContainer.innerHTML = "";
+//         console.log(results);
+//         memeContainer.innerHTML = "";
 
-        for (let i = 0; i < results.length; i++) {
+//         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`
-        }
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
 
-        addModal();
+//         addModal();
 
-    }
-    catch (error) {
-        console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
-personalMemes.addEventListener("click", fetchPersonalMemes);
+// personalMemes.addEventListener("click", fetchPersonalMemes);
 
 // need solving:
 // 1. modal image memes + detailpage
