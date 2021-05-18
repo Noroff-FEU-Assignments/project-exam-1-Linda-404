@@ -4,10 +4,10 @@ const viewMoreBtn = document.querySelector(".view_more_posts");
 // fetch posts
 const url = "https://ellesdevdesigns.com/wp-json/wp/v2/posts?_embed";
 
-async function fetchPosts() {
+async function fetchPosts(postUrl) {
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(postUrl);
         const results = await response.json();
 
         console.log(results);
@@ -30,71 +30,76 @@ async function fetchPosts() {
     }
 }
 
-fetchPosts();
+fetchPosts(url);
 
-async function fetchAllPosts() {
+// fetch all posts
+viewMoreBtn.addEventListener("click", function() {
+    fetchPosts(url + "&per_page=100");
+});
 
-    try {
-        const response = await fetch(url + "&per_page=100");
-        const results = await response.json();
+// async function fetchAllPosts() {
 
-        console.log(results);
-        postContainer.innerHTML = "";
+//     try {
+//         const response = await fetch(url + "&per_page=100");
+//         const results = await response.json();
 
-        for (let i = 0; i < results.length; i++) {
+//         console.log(results);
+//         postContainer.innerHTML = "";
 
-            postContainer.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
-                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
-                                            <div class="title">
-                                                <h4 class="card_title">${results[i].title.rendered}</h4>
-                                                <p class="publish_date">published: ${results[i].date}</p>
-                                            </div>
-                                        </a>`
-        }
-    }
-    catch (error) {
-        console.log(error);
-        postContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//         for (let i = 0; i < results.length; i++) {
 
-viewMoreBtn.addEventListener("click", fetchAllPosts);
+//             postContainer.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
+//                                             <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
+//                                             <div class="title">
+//                                                 <h4 class="card_title">${results[i].title.rendered}</h4>
+//                                                 <p class="publish_date">published: ${results[i].date}</p>
+//                                             </div>
+//                                         </a>`
+//         }
+//     }
+//     catch (error) {
+//         console.log(error);
+//         postContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
+
+// viewMoreBtn.addEventListener("click", fetchAllPosts);
 
 
 
 //  categories posts
-const parenting = 2;
-const lifestyle = 3;
-const personal = 4;
+// const parenting = 2;
+// const lifestyle = 3;
+// const personal = 4;
 
 // fetch posts by category
-const relatedPosts = document.querySelector(".related_posts");
+// const relatedPosts = document.querySelector(".related_posts");
 
-async function fetchPostByCategory(category) {
-    try {
-        const response = await fetch(url + "&categories=" + category);
-        const results = await response.json();
+// async function fetchPostByCategory(category) {
+//     try {
+//         const response = await fetch(url + "&categories=" + category);
+//         const results = await response.json();
 
-        console.log(results);
-        // relatedPosts.innerHTML = "";
+//         console.log(results);
+//         relatedPosts.innerHTML = "";
 
-        // for (let i = 0; i < results.lenght; i++) {
+//         for (let i = 0; i < results.lenght; i++) {
 
-        //     relatedPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
-        //                                     <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
-        //                                     <div class="title">
-        //                                     <h4 class="card_title">${results[i].title.rendered}</h4>
-        //                                     <p class="publish_date">published: ${results[i].date}</p>
-        //                                     </div>
-        //                                 </a>`
-        // }
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
+//             relatedPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
+//                                             <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
+//                                             <div class="title">
+//                                             <h4 class="card_title">${results[i].title.rendered}</h4>
+//                                             <p class="publish_date">published: ${results[i].date}</p>
+//                                             </div>
+//                                         </a>`
+//         }
+//     }
+//     catch (error) {
+//         console.log(error);
+//     }
+// }
 
-fetchPostByCategory(lifestyle);
+// fetchPostByCategory(lifestyle);
 
 
 

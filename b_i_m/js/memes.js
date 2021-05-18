@@ -4,9 +4,6 @@ const parentingMemes = document.querySelector(".parenting_memes");
 const programmingMemes = document.querySelector(".programming_memes");
 const personalMemes = document.querySelector(".personal_memes");
 
-
-
-
 const url = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 async function fetchMemes(memeUrl) {
@@ -30,7 +27,7 @@ async function fetchMemes(memeUrl) {
     }
     catch (error) {
         console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API");
+        memeContainer.innerHTML = displayError("An error occured when calling API, please refresh or try again later");
     }
 }
 
@@ -53,31 +50,23 @@ personalMemes.addEventListener("click", function() {
     fetchMemes(url + "?per_page=100" + "&tag=22");
 });
 
-// async function fetchAllMemes() {
-//     try {
-//         const response = await fetch(url + "?per_page=100");
-//         const results = await response.json();
-
-//         console.log("num results: " + results.length);
-//         memeContainer.innerHTML = "";
-
-//         for (let i = 0; i < results.length; i++) {
-
-//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-//                                         <div class="modal">
-//                                             <img class="modal_img">
-//                                         </div>`
-//         }
-
-//         addModal();
+// Add modal
+function addModal(){
+    let images = document.querySelectorAll(".meme");
+    for (let i=0; i < images.length; i++){
+        let image = images[i];
+        let modal = document.querySelector(`.modal`);
         
-//     }
-//     catch (error) {
-//         console.log(error);
-//         memeContainer.innerHTML = displayError("An error occured when calling API");
-//     }
-// }
-
+        let modalImg = document.querySelector(`.modal_img`);
+        image.addEventListener("click", function() {
+            modal.style.display = "block";
+           modalImg.src = this.src;
+        });
+        modal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    }
+}
 
 // meme category indicator
 const memeIcons = document.querySelectorAll(".meme_icon");
@@ -104,6 +93,33 @@ function currentCategory() {
         
 }
 currentCategory();
+
+
+
+// async function fetchAllMemes() {
+//     try {
+//         const response = await fetch(url + "?per_page=100");
+//         const results = await response.json();
+
+//         console.log("num results: " + results.length);
+//         memeContainer.innerHTML = "";
+
+//         for (let i = 0; i < results.length; i++) {
+
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
+
+//         addModal();
+        
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
 
 // async function fetchParentingMemes() {
@@ -133,23 +149,7 @@ currentCategory();
 //     }
 // }
 
-// Add modal
-function addModal(){
-    let images = document.querySelectorAll(".meme");
-    for (let i=0; i < images.length; i++){
-        let image = images[i];
-        let modal = document.querySelector(`.modal`);
-        
-        let modalImg = document.querySelector(`.modal_img`);
-        image.addEventListener("click", function() {
-            modal.style.display = "block";
-           modalImg.src = this.src;
-        });
-        modal.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-    }
-}
+
 
 // parentingMemes.addEventListener("click", fetchParentingMemes);
 
