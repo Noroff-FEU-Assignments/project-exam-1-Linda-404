@@ -37,6 +37,9 @@ viewMoreBtn.addEventListener("click", function() {
     fetchPosts(url + "&per_page=100");
 });
 
+
+
+
 // async function fetchAllPosts() {
 
 //     try {

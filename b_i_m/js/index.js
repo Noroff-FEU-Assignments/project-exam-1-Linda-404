@@ -5,7 +5,7 @@ const postsContainer = document.querySelector(".post_container");
 
 const url = "https://ellesdevdesigns.com/wp-json/wp/v2/posts?_embed";
 
-// fetch latest posts
+// fetch posts
 async function fetchPosts() {
 
     try {
