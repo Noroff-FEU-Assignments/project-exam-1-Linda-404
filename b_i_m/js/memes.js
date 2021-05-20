@@ -31,8 +31,9 @@ const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 //     }
 // }
 
-fetchMemes(urlMemes);
 
+// fetch first 10 memes
+fetchMemes(urlMemes);
 // fetch all memes
 allMemes.addEventListener("click", function() {
     fetchMemes(urlMemes + "?per_page=100");

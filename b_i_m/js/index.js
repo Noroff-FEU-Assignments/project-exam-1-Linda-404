@@ -69,35 +69,38 @@ function scrollRight(){
 arrowLeft.addEventListener("click", scrollLeft);
 arrowRight.addEventListener("click", scrollRight);
 
-const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
+// const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 // fetch memes
-async function fetchMemes() {
-    try {
-        const response = await fetch(urlMemes);
-        const results = await response.json();
+// async function fetchMemes() {
+//     try {
+//         const response = await fetch(urlMemes);
+//         const results = await response.json();
 
-        console.log(results);
-        memesContainer.innerHTML = "";
+//         console.log(results);
+//         memesContainer.innerHTML = "";
 
-        for (let i = 0; i < results.length; i++) {
+//         for (let i = 0; i < results.length; i++) {
 
-            memesContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`
-        }
+//             memesContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
 
-        addModal();
+//         addModal();
 
-    }
-    catch (error) {
-        console.log(error);
-        memesContainer.innerHTML = displayError("An error occured when calling API");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memesContainer.innerHTML = displayError("An error occured when calling API");
+//     }
+// }
 
-fetchMemes();
+// fetchMemes();
+
+// fetch first 10 memes
+fetchMemes(urlMemes);
 
 // add modal
 function addModal(){
