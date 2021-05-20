@@ -10,7 +10,7 @@ async function fetchMemes(memeUrl) {
 
         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme" alt="${results[i].images[0].alt}">
                                         <div class="modal">
                                             <img class="modal_img">
                                         </div>`

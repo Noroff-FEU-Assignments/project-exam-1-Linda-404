@@ -19,7 +19,7 @@ async function fetchPosts() {
         for (let i = 0; i < results.length; i++) {
 
             latestPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
-                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
+                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}">
                                             <div class="title">
                                                 <h4 class="card_title">${results[i].title.rendered}</h4>
                                                 <p class="publish_date">published: ${results[i].date}</p>
@@ -28,7 +28,7 @@ async function fetchPosts() {
         }
         for (let i =0; i < 4; i++) {
             postsContainer.innerHTML += `<div class="post_homepage">
-                                            <a href="blogdetails.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="homepage_image"></a>
+                                            <a href="blogdetails.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="homepage_image" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}"></a>
                                             <div class="homepage_content">
                                                 <h3 class="post_title">${results[i].title.rendered}</h3>
                                                 <div class="homepage_text">${results[i].content.rendered}...</div>
