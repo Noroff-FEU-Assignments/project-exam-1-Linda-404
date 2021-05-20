@@ -4,7 +4,7 @@ const parentingMemes = document.querySelector(".parenting_memes");
 const programmingMemes = document.querySelector(".programming_memes");
 const personalMemes = document.querySelector(".personal_memes");
 
-const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
+
 
 
 // fetch first 10 memes

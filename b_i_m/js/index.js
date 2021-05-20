@@ -1,5 +1,5 @@
 const latestPosts = document.querySelector(".latest_posts");
-const memesContainer = document.querySelector(".memes");
+const memeContainer = document.querySelector(".memes");
 const postsContainer = document.querySelector(".post_container");
 
 
@@ -65,8 +65,10 @@ function scrollRight(){
     scroll(250);
 }
 
-arrowLeft.addEventListener("click", scrollLeft);
-arrowRight.addEventListener("click", scrollRight);
+
+
+addEventListeners(arrowLeft, scrollLeft);
+addEventListeners(arrowRight, scrollRight);
 
 
 
@@ -77,18 +79,23 @@ fetchMemes(urlMemes);
 function addModal(){
     let images = document.querySelectorAll(".meme");
     for (let i=0; i < images.length; i++){
-        console.log(images[i]);
         let image = images[i];
         let modal = document.querySelector(`.modal`);
         console.log(modal);
         let modalImg = document.querySelector(`.modal_img`);
         console.log(modalImg);
         image.addEventListener("click", function() {
-            console.log("hei fra " + i);
             modal.style.display = "block";
-           modalImg.src = this.src;
+            modalImg.src = this.src;
         });
-        modal.addEventListener("click", function() {
+        image.addEventListener("keydown", function(e) {
+            if (e.key !== "Tab"){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modal.focus();
+            }            
+        });
+        addEventListeners(modal, function() {
             modal.style.display = "none";
         });
     }

@@ -684,7 +684,7 @@ main {
 
 /* --footer style-- */
 footer {
-    background-color: var(--lightpurple);
+    background-color: var(--purple);
     color: var(--bananayellow);
     display: flex;
     flex-direction: column;

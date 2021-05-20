@@ -1,4 +1,12 @@
+// add event listeners
+function addEventListeners(target, action) {
+    target.addEventListener("keydown", action);
+    target.addEventListener("click", action);
+}
+
+
 // fetch memes
+const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 async function fetchMemes(memeUrl) {
     try {
@@ -10,8 +18,8 @@ async function fetchMemes(memeUrl) {
 
         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme" alt="${results[i].images[0].alt}">
-                                        <div class="modal">
+            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme" tabindex="0" alt="${results[i].images[0].alt}">
+                                        <div class="modal" tabindex="-1">
                                             <img class="modal_img">
                                         </div>`
         }
