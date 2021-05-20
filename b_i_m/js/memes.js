@@ -4,7 +4,7 @@ const parentingMemes = document.querySelector(".parenting_memes");
 const programmingMemes = document.querySelector(".programming_memes");
 const personalMemes = document.querySelector(".personal_memes");
 
-const url = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
+const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 async function fetchMemes(memeUrl) {
     try {
@@ -31,23 +31,23 @@ async function fetchMemes(memeUrl) {
     }
 }
 
-fetchMemes(url);
+fetchMemes(urlMemes);
 
 // fetch all memes
 allMemes.addEventListener("click", function() {
-    fetchMemes(url + "?per_page=100");
+    fetchMemes(urlMemes + "?per_page=100");
 });
 // fetch parenting memes
 parentingMemes.addEventListener("click", function() {
-    fetchMemes(url + "?per_page=100" + "&tag=20");
+    fetchMemes(urlMemes + "?per_page=100" + "&tag=20");
 });
 // fetch programming memes
 programmingMemes.addEventListener("click", function() {
-    fetchMemes(url + "?per_page=100" + "&tag=21");
+    fetchMemes(urlMemes + "?per_page=100" + "&tag=21");
 });
 // fetch personal memes
 personalMemes.addEventListener("click", function() {
-    fetchMemes(url + "?per_page=100" + "&tag=22");
+    fetchMemes(urlMemes + "?per_page=100" + "&tag=22");
 });
 
 // Add modal
