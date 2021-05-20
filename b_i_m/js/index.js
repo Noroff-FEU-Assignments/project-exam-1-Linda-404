@@ -69,6 +69,7 @@ arrowLeft.addEventListener("click", scrollLeft);
 arrowRight.addEventListener("click", scrollRight);
 
 
+
 // fetch first 10 memes
 fetchMemes(urlMemes);
 

@@ -31,7 +31,7 @@ async function fetchBlogDetails() {
 
         title.innerHTML = `${results.title.rendered} | badinfluencemom`
         
-        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image">
+        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image" alt="${results._embedded['wp:featuredmedia'][0].alt_text}">
                                 <div class="modal">
                                     <img class="modal_img">
                                 </div>
@@ -77,8 +77,8 @@ async function fetchPostByCategory(category) {
 
         for (let i = 0; i < results.length; i++) {
 
-            relatedPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}">
-                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image">
+            relatedPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
+                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}">
                                             <div class="title">
                                             <h4 class="card_title">${results[i].title.rendered}</h4>
                                             <p class="publish_date">published: ${results[i].date}</p>

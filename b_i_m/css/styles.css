@@ -588,9 +588,10 @@ main {
 .title {
     color: #000;
 }
-/* .card_title {
-    margin-bottom: 1em;
-} */
+.card_title {
+    /* margin-bottom: 1em; */
+    color: #000;
+}
 .publish_date {
     margin-top: 1em;
     color: var(--lightpurple);
