@@ -31,8 +31,8 @@ async function fetchBlogDetails() {
 
         title.innerHTML = `${results.title.rendered} | badinfluencemom`
         
-        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image" alt="${results._embedded['wp:featuredmedia'][0].alt_text}">
-                                <div class="modal">
+        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image" tabindex="0" alt="${results._embedded['wp:featuredmedia'][0].alt_text}">
+                                <div class="modal" tabindex="-1">
                                     <img class="modal_img">
                                 </div>
                                 <div class="blog_title">
@@ -49,6 +49,13 @@ async function fetchBlogDetails() {
             modal.style.display = "block";
             modalImg.src = this.src;
         }
+        // img.onkeydown(function(e) {
+        //     if (e.key !== "Tab"){
+        //         modal.style.display = "block";
+        //         modalImg.src = this.src;
+        //         modal.focus();
+        //     }            
+        // });
         modal.onclick = function() {
             modal.style.display = "none";
         }
@@ -113,12 +120,16 @@ function scrollRight(){
     scroll(250);
 }
 
-arrowLeft.addEventListener("click", scrollLeft);
-arrowRight.addEventListener("click", scrollRight);
+addEventListeners(arrowLeft, scrollLeft);
+addEventListeners(arrowRight, scrollRight);
+
+// arrowLeft.addEventListener("click", scrollLeft);
+// arrowRight.addEventListener("click", scrollRight);
 
 // add comment
 const comment = document.querySelector("#comment");
 const button = document.querySelector(".cta_btn");
+
 function validateComment() {
     if (comment.value.length >= 5) {
         button.disabled = false;
