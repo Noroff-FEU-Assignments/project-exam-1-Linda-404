@@ -76,30 +76,30 @@ addEventListeners(arrowRight, scrollRight);
 fetchMemes(urlMemes);
 
 // add modal
-function addModal(){
-    let images = document.querySelectorAll(".meme");
-    for (let i=0; i < images.length; i++){
-        let image = images[i];
-        let modal = document.querySelector(`.modal`);
-        console.log(modal);
-        let modalImg = document.querySelector(`.modal_img`);
-        console.log(modalImg);
-        image.addEventListener("click", function() {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        });
-        image.addEventListener("keydown", function(e) {
-            if (e.key !== "Tab"){
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                modal.focus();
-            }            
-        });
-        addEventListeners(modal, function() {
-            modal.style.display = "none";
-        });
-    }
-}
+// function addModal(){
+//     let images = document.querySelectorAll(".meme");
+//     for (let i=0; i < images.length; i++){
+//         let image = images[i];
+//         let modal = document.querySelector(`.modal`);
+//         console.log(modal);
+//         let modalImg = document.querySelector(`.modal_img`);
+//         console.log(modalImg);
+//         image.addEventListener("click", function() {
+//             modal.style.display = "block";
+//             modalImg.src = this.src;
+//         });
+//         image.addEventListener("keydown", function(e) {
+//             if (e.key !== "Tab"){
+//                 modal.style.display = "block";
+//                 modalImg.src = this.src;
+//                 modal.focus();
+//             }            
+//         });
+//         addEventListeners(modal, function() {
+//             modal.style.display = "none";
+//         });
+//     }
+// }
 
 
 

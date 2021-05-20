@@ -5,8 +5,6 @@ const programmingMemes = document.querySelector(".programming_memes");
 const personalMemes = document.querySelector(".personal_memes");
 
 
-
-
 // fetch first 10 memes
 fetchMemes(urlMemes);
 // fetch all memes
@@ -27,22 +25,22 @@ personalMemes.addEventListener("click", function() {
 });
 
 // Add modal
-function addModal(){
-    let images = document.querySelectorAll(".meme");
-    for (let i=0; i < images.length; i++){
-        let image = images[i];
-        let modal = document.querySelector(`.modal`);
+// function addModal(){
+//     let images = document.querySelectorAll(".meme");
+//     for (let i=0; i < images.length; i++){
+//         let image = images[i];
+//         let modal = document.querySelector(`.modal`);
         
-        let modalImg = document.querySelector(`.modal_img`);
-        image.addEventListener("click", function() {
-            modal.style.display = "block";
-           modalImg.src = this.src;
-        });
-        modal.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-    }
-}
+//         let modalImg = document.querySelector(`.modal_img`);
+//         image.addEventListener("click", function() {
+//             modal.style.display = "block";
+//            modalImg.src = this.src;
+//         });
+//         modal.addEventListener("click", function() {
+//             modal.style.display = "none";
+//         });
+//     }
+// }
 
 // meme category indicator
 const memeIcons = document.querySelectorAll(".meme_icon");
