@@ -48,7 +48,6 @@ async function fetchPosts() {
 fetchPosts();
 
 
-
 // add clickfunction to arrows
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
@@ -68,6 +67,35 @@ function scrollRight(){
 
 arrowLeft.addEventListener("click", scrollLeft);
 arrowRight.addEventListener("click", scrollRight);
+
+
+// fetch first 10 memes
+fetchMemes(urlMemes);
+
+// add modal
+function addModal(){
+    let images = document.querySelectorAll(".meme");
+    for (let i=0; i < images.length; i++){
+        console.log(images[i]);
+        let image = images[i];
+        let modal = document.querySelector(`.modal`);
+        console.log(modal);
+        let modalImg = document.querySelector(`.modal_img`);
+        console.log(modalImg);
+        image.addEventListener("click", function() {
+            console.log("hei fra " + i);
+            modal.style.display = "block";
+           modalImg.src = this.src;
+        });
+        modal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    }
+}
+
+
+
+
 
 // const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
@@ -98,27 +126,3 @@ arrowRight.addEventListener("click", scrollRight);
 // }
 
 // fetchMemes();
-
-// fetch first 10 memes
-fetchMemes(urlMemes);
-
-// add modal
-function addModal(){
-    let images = document.querySelectorAll(".meme");
-    for (let i=0; i < images.length; i++){
-        console.log(images[i]);
-        let image = images[i];
-        let modal = document.querySelector(`.modal`);
-        console.log(modal);
-        let modalImg = document.querySelector(`.modal_img`);
-        console.log(modalImg);
-        image.addEventListener("click", function() {
-            console.log("hei fra " + i);
-            modal.style.display = "block";
-           modalImg.src = this.src;
-        });
-        modal.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-    }
-}

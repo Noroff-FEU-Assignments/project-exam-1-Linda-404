@@ -6,31 +6,6 @@ const personalMemes = document.querySelector(".personal_memes");
 
 const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
-// async function fetchMemes(memeUrl) {
-//     try {
-//         const response = await fetch(memeUrl);
-//         const results = await response.json();
-
-//         console.log(results);
-//         memeContainer.innerHTML = "";
-
-//         for (let i = 0; i < results.length; i++) {
-
-//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-//                                         <div class="modal">
-//                                             <img class="modal_img">
-//                                         </div>`
-//         }
-
-//         addModal();
-
-//     }
-//     catch (error) {
-//         console.log(error);
-//         memeContainer.innerHTML = displayError("An error occured when calling API, please refresh or try again later");
-//     }
-// }
-
 
 // fetch first 10 memes
 fetchMemes(urlMemes);
@@ -95,6 +70,39 @@ function currentCategory() {
 }
 currentCategory();
 
+
+
+
+
+
+
+
+
+
+// async function fetchMemes(memeUrl) {
+//     try {
+//         const response = await fetch(memeUrl);
+//         const results = await response.json();
+
+//         console.log(results);
+//         memeContainer.innerHTML = "";
+
+//         for (let i = 0; i < results.length; i++) {
+
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
+
+//         addModal();
+
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API, please refresh or try again later");
+//     }
+// }
 
 
 // async function fetchAllMemes() {
