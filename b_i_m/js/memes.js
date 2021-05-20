@@ -6,30 +6,30 @@ const personalMemes = document.querySelector(".personal_memes");
 
 const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
-async function fetchMemes(memeUrl) {
-    try {
-        const response = await fetch(memeUrl);
-        const results = await response.json();
+// async function fetchMemes(memeUrl) {
+//     try {
+//         const response = await fetch(memeUrl);
+//         const results = await response.json();
 
-        console.log(results);
-        memeContainer.innerHTML = "";
+//         console.log(results);
+//         memeContainer.innerHTML = "";
 
-        for (let i = 0; i < results.length; i++) {
+//         for (let i = 0; i < results.length; i++) {
 
-            memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-                                        <div class="modal">
-                                            <img class="modal_img">
-                                        </div>`
-        }
+//             memeContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
+//                                         <div class="modal">
+//                                             <img class="modal_img">
+//                                         </div>`
+//         }
 
-        addModal();
+//         addModal();
 
-    }
-    catch (error) {
-        console.log(error);
-        memeContainer.innerHTML = displayError("An error occured when calling API, please refresh or try again later");
-    }
-}
+//     }
+//     catch (error) {
+//         console.log(error);
+//         memeContainer.innerHTML = displayError("An error occured when calling API, please refresh or try again later");
+//     }
+// }
 
 fetchMemes(urlMemes);
 
