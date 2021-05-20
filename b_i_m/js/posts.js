@@ -16,7 +16,7 @@ async function fetchPosts(postUrl) {
         for (let i = 0; i < results.length; i++) {
 
             postContainer.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
-                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="blog_image">
+                                            <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="blog_image" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}>
                                             <div class="title">
                                                 <h4 class="card_title">${results[i].title.rendered}</h4>
                                                 <p class="publish_date">published: ${results[i].date}</p>

@@ -779,6 +779,7 @@ span {
 }
 .error {
     background-color: var(--warmpurple);
+    color: #FFF;
     padding: 10px;
 }
 
