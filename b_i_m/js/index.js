@@ -101,10 +101,6 @@ fetchMemes(urlMemes);
 //     }
 // }
 
-
-
-
-
 // const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
 
 // fetch memes

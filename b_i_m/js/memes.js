@@ -8,19 +8,19 @@ const personalMemes = document.querySelector(".personal_memes");
 // fetch first 10 memes
 fetchMemes(urlMemes);
 // fetch all memes
-allMemes.addEventListener("click", function() {
+addEventListeners(allMemes, function() {
     fetchMemes(urlMemes + "?per_page=100");
 });
 // fetch parenting memes
-parentingMemes.addEventListener("click", function() {
+addEventListeners(parentingMemes, function() {
     fetchMemes(urlMemes + "?per_page=100" + "&tag=20");
 });
 // fetch programming memes
-programmingMemes.addEventListener("click", function() {
+addEventListeners(programmingMemes, function() {
     fetchMemes(urlMemes + "?per_page=100" + "&tag=21");
 });
 // fetch personal memes
-personalMemes.addEventListener("click", function() {
+addEventListeners(personalMemes, function() {
     fetchMemes(urlMemes + "?per_page=100" + "&tag=22");
 });
 
@@ -50,7 +50,7 @@ function currentCategory() {
     let memeIcons = document.querySelectorAll(".meme_icon");
     for (let i = 0; i < memeIcons.length; i++) {
         let memeIcon = memeIcons[i];
-        memeIcon.addEventListener("click", function() {
+        addEventListeners(memeIcon, function() {
             isClicked.fill(false);
             isClicked[i] = true;   
             for (let j = 0; j < memeIcons.length; j++){
