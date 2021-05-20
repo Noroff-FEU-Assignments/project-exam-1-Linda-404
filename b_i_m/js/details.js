@@ -31,7 +31,7 @@ async function fetchBlogDetails() {
 
         title.innerHTML = `${results.title.rendered} | badinfluencemom`
         
-        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image" alt="${results._embedded['wp:featuredmedia'][0].alt_text}>
+        blogIntro.innerHTML = `<img src="${results._embedded['wp:featuredmedia'][0].source_url}" class="detail_image">
                                 <div class="modal">
                                     <img class="modal_img">
                                 </div>
