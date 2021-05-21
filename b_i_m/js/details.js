@@ -6,9 +6,6 @@ const title = document.querySelector("title");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-console.log(queryString);
-console.log(params);
-console.log(id);
 
 // fetch blogDetails
 const baseUrl = "https://ellesdevdesigns.com/wp-json/wp/v2/";
@@ -23,11 +20,8 @@ async function fetchBlogDetails() {
         const respons = await fetch(urlDetails + "?_embed");
         const results = await respons.json();
 
-        console.log(results);
         let category = results.categories[0];
-        console.log("cat: " + category)
         fetchPostByCategory(category);
-
 
         title.innerHTML = `${results.title.rendered} | badinfluencemom`
         
@@ -49,20 +43,24 @@ async function fetchBlogDetails() {
             modal.style.display = "block";
             modalImg.src = this.src;
         }
-        // img.onkeydown(function(e) {
-        //     if (e.key !== "Tab"){
-        //         modal.style.display = "block";
-        //         modalImg.src = this.src;
-        //         modal.focus();
-        //     }            
-        // });
+        img.onkeydown = function(e) {
+            if (e.key !== "Tab"){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modal.focus();
+            }            
+        };
         modal.onclick = function() {
             modal.style.display = "none";
         }
+        modal.onkeydown = function(e) {
+            if (e.key !== "Tab"){
+                modal.style.display = "none";
+            }            
+        };
 
     }
     catch (error) {
-        console.log(error);
         blogIntro.innerHTML = displayError("An error occured when calling API");
         detailsContent.innerHTML = displayError("An error occured when calling API");
     }
@@ -79,11 +77,9 @@ async function fetchPostByCategory(category) {
         const response = await fetch(embedUrl + "&categories=" + category);
         const results = await response.json();
 
-        console.log(results);
         relatedPosts.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
-
             relatedPosts.innerHTML += `<a href="blogdetails.html?id=${results[i].id}" class="card_post">
                                             <img src="${results[i]._embedded['wp:featuredmedia'][0].source_url}" class="card_image" alt="${results[i]._embedded['wp:featuredmedia'][0].alt_text}">
                                             <div class="title">
@@ -112,16 +108,12 @@ function scroll(amount) {
     scrollDiv.scrollLeft += amount;
 }
 
-function scrollLeft(){
+addEventListeners(arrowLeft, function (){
     scroll(-250);
-}
-
-function scrollRight(){
+});
+addEventListeners(arrowRight, function (){
     scroll(250);
-}
-
-addEventListeners(arrowLeft, scrollLeft);
-addEventListeners(arrowRight, scrollRight);
+});
 
 
 // add comment

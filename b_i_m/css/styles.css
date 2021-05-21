@@ -449,6 +449,9 @@ main {
 }
 
 /* about page style */
+.about_image {
+    max-width: 40em;
+}
 .introduction {
     max-width: 40em;
     padding: 1em;
@@ -813,11 +816,14 @@ span {
     }
 
     /* about page style */
-    .detail_image {
+    .about_image {
         max-width: 30em;
     }
 
     /* blogdetails style */
+    .detail_image {
+        max-width: 30em;
+    }
     .comment_field {
         width: 30em;
     }
@@ -1024,7 +1030,7 @@ span {
     .introduction {
         max-width: 20em;
     }
-    .detail_image {
+    .about_image {
         max-width: 20em;
     }
 
@@ -1041,6 +1047,9 @@ span {
     }
 
     /* blogdetails style */
+    .detail_image {
+        max-width: 20em;
+    }
     .blog_intro {
         margin-top: 0.5em;
         display: flex;

@@ -12,7 +12,6 @@ async function fetchPosts() {
         const response = await fetch(url);
         const results = await response.json();
 
-        console.log(results);
         latestPosts.innerHTML = "";
         postsContainer.innerHTML = "";
 
@@ -57,16 +56,12 @@ function scroll(amount) {
     scrollDiv.scrollLeft += amount;
 }
 
-function scrollLeft(){
+addEventListeners(arrowLeft, function (){
     scroll(-250);
-}
-
-function scrollRight(){
+});
+addEventListeners(arrowRight, function (){
     scroll(250);
-}
-
-addEventListeners(arrowLeft, scrollLeft);
-addEventListeners(arrowRight, scrollRight);
+});
 
 
 // fetch first 10 memes

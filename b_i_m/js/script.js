@@ -12,7 +12,6 @@ async function fetchMemes(memeUrl) {
         const response = await fetch(memeUrl);
         const results = await response.json();
 
-        console.log(results);
         memeContainer.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
@@ -38,9 +37,7 @@ function addModal(){
     for (let i=0; i < images.length; i++){
         let image = images[i];
         let modal = document.querySelector(`.modal`);
-        console.log(modal);
         let modalImg = document.querySelector(`.modal_img`);
-        console.log(modalImg);
         image.addEventListener("click", function() {
             modal.style.display = "block";
             modalImg.src = this.src;

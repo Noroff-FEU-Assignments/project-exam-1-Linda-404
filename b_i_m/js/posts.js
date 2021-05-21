@@ -10,7 +10,6 @@ async function fetchPosts(postUrl) {
         const response = await fetch(postUrl);
         const results = await response.json();
 
-        console.log(results);
         postContainer.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
