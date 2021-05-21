@@ -65,68 +65,9 @@ function scrollRight(){
     scroll(250);
 }
 
-
-
 addEventListeners(arrowLeft, scrollLeft);
 addEventListeners(arrowRight, scrollRight);
 
 
-
 // fetch first 10 memes
 fetchMemes(urlMemes);
-
-// add modal
-// function addModal(){
-//     let images = document.querySelectorAll(".meme");
-//     for (let i=0; i < images.length; i++){
-//         let image = images[i];
-//         let modal = document.querySelector(`.modal`);
-//         console.log(modal);
-//         let modalImg = document.querySelector(`.modal_img`);
-//         console.log(modalImg);
-//         image.addEventListener("click", function() {
-//             modal.style.display = "block";
-//             modalImg.src = this.src;
-//         });
-//         image.addEventListener("keydown", function(e) {
-//             if (e.key !== "Tab"){
-//                 modal.style.display = "block";
-//                 modalImg.src = this.src;
-//                 modal.focus();
-//             }            
-//         });
-//         addEventListeners(modal, function() {
-//             modal.style.display = "none";
-//         });
-//     }
-// }
-
-// const urlMemes = "https://ellesdevdesigns.com/wp-json/wc/store/products/";
-
-// fetch memes
-// async function fetchMemes() {
-//     try {
-//         const response = await fetch(urlMemes);
-//         const results = await response.json();
-
-//         console.log(results);
-//         memesContainer.innerHTML = "";
-
-//         for (let i = 0; i < results.length; i++) {
-
-//             memesContainer.innerHTML += `<img src="${results[i].images[0].src}" class="meme">
-//                                         <div class="modal">
-//                                             <img class="modal_img">
-//                                         </div>`
-//         }
-
-//         addModal();
-
-//     }
-//     catch (error) {
-//         console.log(error);
-//         memesContainer.innerHTML = displayError("An error occured when calling API");
-//     }
-// }
-
-// fetchMemes();

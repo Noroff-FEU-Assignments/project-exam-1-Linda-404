@@ -123,8 +123,6 @@ function scrollRight(){
 addEventListeners(arrowLeft, scrollLeft);
 addEventListeners(arrowRight, scrollRight);
 
-// arrowLeft.addEventListener("click", scrollLeft);
-// arrowRight.addEventListener("click", scrollRight);
 
 // add comment
 const comment = document.querySelector("#comment");
@@ -140,36 +138,3 @@ function validateComment() {
 }
 
 comment.addEventListener("keyup", validateComment);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// modal image
-// const modal = document.querySelector(".modal");
-// const img = document.querySelector(".detail_image");
-// const modalImg = document.querySelector(".modal_img");
-
-// console.log(modal);
-// console.log(img);
-// console.log(modalImg);
-
-// img.onclick = function() {
-//     debugger;
-//     modal.style.display = "block";
-//     modalImg.src = this.src;
-// }
-// modal.onclick = function() {
-//     debugger;
-//     modal.style.display = "none";
-// }
